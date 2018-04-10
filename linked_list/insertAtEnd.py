@@ -13,9 +13,13 @@ class LinkedList:
 
     def insert_at_the_end(self, data):
         temp = self.head
+        new_node = Node(data)
+        if self.head == None:
+            self.head = new_node
+            return
+
         while(temp.next != None):
             temp = temp.next
-        new_node = Node(data)
         temp.next = new_node
 
     def print_linked_list(self):
