@@ -3,13 +3,14 @@ class Node:
         self.data = data
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
 
-    def printList(self):
+    def print_list(self):
         temp = self.head
-        while(temp):
+        while temp:
             print temp.data
             temp = temp.next
 
@@ -22,5 +23,5 @@ third = Node(3)
 llist.head.next = second
 second.next = third
 
-llist.printList()
+llist.print_list()
 
