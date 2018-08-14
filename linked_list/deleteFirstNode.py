@@ -44,6 +44,14 @@ class LinkedList:
                 temp = temp.next
             prev.next = None
 
+    def linked_list_length(self):
+        if self.head is None:
+            return 0
+        temp = self.head
+        count = 0
+        while temp:
+            count += 1
+        return count
 
 
 llist = LinkedList()
@@ -51,6 +59,8 @@ llist.push(1)
 llist.push(2)
 llist.push(3)
 llist.push(4)
-llist.del_node_first()
-llist.del_node_last()
-llist.print_list()
+#llist.del_node_first()
+#llist.del_node_last()
+#llist.print_list()
+length = llist.linked_list_length()
+print length
