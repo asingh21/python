@@ -51,7 +51,40 @@ class LinkedList:
         count = 0
         while temp:
             count += 1
+            temp = temp.next
         return count
+
+    def del_node_middle(self, index):
+        length = self.linked_list_length()
+        if index > length:
+            raise "index is out of range.."
+        if index == 1:
+            self.del_node_first()
+        elif index == length:
+            self.del_node_last()
+        else:
+            prev = self.head
+            current = prev.next
+            after = current.next
+            count = 0
+            #prev = current
+            #current = current.next
+            #after = current.next
+            while current.next:
+                print "prev = {}".format(prev.data)
+                print "current = {}".format(current.data)
+                print "after = {}".format(after.data)
+                count += 1
+                if count == index:
+                    print "count when break = {}".format(count)
+                    print "current node = {}".format(current.data)
+                    break
+                prev = current
+                current = current.next
+                after = current.next
+            current.next = None
+            prev.next = after
+
 
 
 llist = LinkedList()
@@ -59,8 +92,12 @@ llist.push(1)
 llist.push(2)
 llist.push(3)
 llist.push(4)
+llist.push(5)
 #llist.del_node_first()
 #llist.del_node_last()
 #llist.print_list()
-length = llist.linked_list_length()
-print length
+#length = llist.linked_list_length()
+#print length
+#print "Ankush"
+llist.del_node_middle(4)
+llist.print_list()
