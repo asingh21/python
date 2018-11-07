@@ -22,6 +22,7 @@ def pre_order_recursive(root, result=None):
     if result is None:
         result = []
     result.append(root.data)
+    print root.data
     pre_order_recursive(root.left, result)
     pre_order_recursive(root.right, result)
     return result
@@ -43,8 +44,8 @@ def pre_order_iterative(root):
 
 root = BinaryTreeNode(1)
 root.left = BinaryTreeNode(2)
-root.left.right = BinaryTreeNode(4)
-root.left.left = BinaryTreeNode(5)
+root.left.right = BinaryTreeNode(5)
+root.left.left = BinaryTreeNode(4)
 root.right = BinaryTreeNode(3)
 root.right.left = BinaryTreeNode(6)
 root.right.right = BinaryTreeNode(7)
