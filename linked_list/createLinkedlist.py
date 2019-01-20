@@ -8,11 +8,19 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def print_list(self):
+    def print_list(self, input_element_list=None):
         temp = self.head
-        while temp:
-            print temp.data
-            temp = temp.next
+        if not self.head:
+            while(temp.next):
+                temp = temp.next
+        for element in input_element_list:
+            if not temp:
+                temp = Node(element)
+                self.head = temp
+            else:
+                temp.next = Node(element)
+                temp = temp.next
+
 
 
 llist = LinkedList()

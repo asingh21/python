@@ -1,0 +1,4 @@
+12:30 open_sent
+12:32 open_revc
+12:34 active
+this is sparta
